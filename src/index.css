@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Jost", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #16161e;          /* dark header / footer bar */
+  --color-ink-soft: #2b2b36;
+  --color-accent: #4acdde;       /* logo teal */
+  --color-link: #3d9be9;         /* active nav blue */
+
+  --color-band-workflows: #b9dde3;
+  --color-band-route: #f7e64f;
+  --color-band-daas: #cfe3f6;
+  --color-band-mapping: #f0ddc2;
+  --color-band-enrich: #f2d9d2;
+  --color-band-shell: #e2e4e6;   /* grey behind screenshots */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 300;
+  color: #16161e;
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+/* Reveal-on-scroll, matching the gentle fade-up of the original site */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
