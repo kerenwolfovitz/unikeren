@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Link } from "react-router-dom";
 
 type Variant = "solid" | "outline" | "outline-dark";
 
@@ -19,13 +20,19 @@ export function Pill({
   variant?: Variant;
   className?: string;
 }) {
+  const classes = `inline-flex items-center justify-center rounded-full border px-7 py-2.5 text-[13px] whitespace-nowrap transition-colors ${styles[variant]} ${className}`;
+
+  // Links that stay on this site go through the router; everything else opens in a new tab.
+  if (href.startsWith("/")) {
+    return (
+      <Link to={href} className={classes}>
+        {children}
+      </Link>
+    );
+  }
+
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-      className={`inline-flex items-center justify-center rounded-full border px-7 py-2.5 text-[13px] whitespace-nowrap transition-colors ${styles[variant]} ${className}`}
-    >
+    <a href={href} target="_blank" rel="noreferrer" className={classes}>
       {children}
     </a>
   );

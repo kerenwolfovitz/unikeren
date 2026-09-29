@@ -45,6 +45,7 @@ const pastProjects: PastProject[] = [
         label: "Figma prototype",
         href: "https://www.figma.com/proto/ovJMDATyc6busLCL0H9VIq/Management-Console-(Copy)?node-id=7912%3A0&starting-point-node-id=7912%3A1211",
       },
+      { label: "Discovery doc", href: "/management-console-discovery" },
       {
         label: "More concepts",
         href: "https://www.figma.com/proto/b9Fm9pbkTYlGbbhG5G6jIG/MC-conversational-design?node-id=2%3A5&scaling=min-zoom&page-id=0%3A1",
