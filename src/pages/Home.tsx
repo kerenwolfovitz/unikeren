@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { Reveal } from "../components/Reveal";
 import { FlowArrow, WorkflowStep, type Step } from "../components/WorkflowStep";
+import { DatasetShowcase } from "../components/DatasetShowcase";
 
 function Hero() {
   return (
@@ -107,22 +108,29 @@ function HowIWork() {
   );
 }
 
+const stats = [
+  { n: "1,000+", l: "datasets" },
+  { n: "21B+", l: "records" },
+  { n: "250+", l: "domains" },
+  { n: "50,000+", l: "customers on the platform" },
+];
+
 const dataWork = [
   {
-    title: "Infrastructure into product",
-    body: "Collection pipelines and AI extraction are deep technical systems. My job is to shape them into features with a clear user, a clear job and a clear definition of done.",
+    title: "What the product is",
+    body: "Ready-made, validated datasets from the web's biggest sources — LinkedIn, Amazon, Instagram, Google Maps, Zillow, Crunchbase — across business, eCommerce, social and real estate. Buy a slice rather than build and maintain a scraper.",
   },
   {
-    title: "Discovery with technical users",
-    body: "The people using this are engineers, data scientists and analysts. Discovery means getting into their pipelines and their workarounds, not just running interviews.",
+    title: "How it reaches people",
+    body: "Delivered by API, S3 or webhook, in JSON, CSV or Parquet, one-time or on a refresh subscription. Smart updates mean customers pay for new and changed records instead of re-buying the whole set.",
   },
   {
-    title: "AI where it earns its place",
-    body: "LLM-assisted extraction and structuring, scoped to the cases where it genuinely beats a deterministic approach — and measured against it rather than assumed better.",
+    title: "Where AI comes in",
+    body: "Customers describe what they need in plain English and the filters are applied for them, narrowing a vast dataset to the rows that matter — which cuts both their cost and the volume they have to reason about.",
   },
   {
-    title: "Reliability as a feature",
-    body: "At this scale, uptime, freshness and accuracy are the product. I set the KPIs for them and hold the roadmap to them when something shinier comes along.",
+    title: "What I hold it to",
+    body: "Freshness, fill rates and validation are the product, not a footnote. Published data-integrity stats let a buyer check the data meets their bar before they spend anything.",
   },
 ];
 
@@ -137,22 +145,33 @@ function DataProduct() {
               Where I work
             </span>
           </div>
-          <h2 className="mt-5 text-[28px] lg:text-[34px]">Data is the product</h2>
+          <h2 className="mt-5 text-[28px] lg:text-[34px]">I own Datasets</h2>
           <p className="mt-4 text-[15px] leading-[1.75] text-white/85">
-            Bright Data is a web-data platform — infrastructure that collects, structures and
-            delivers public web data at enormous scale. I work on the product layer above it,
-            turning raw collection and AI capability into something an enterprise data team can buy,
-            trust and run in production.
+            Bright Data is a web-data platform. Datasets is the part of it I own: structured,
+            validated data from the public web, packaged so a team can buy exactly the slice they
+            need instead of building and babysitting their own collection pipeline.
           </p>
         </div>
 
-        <div className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2">
-          {dataWork.map((d) => (
-            <div key={d.title} className="border-t border-white/20 pt-4">
-              <h3 className="font-display text-[17px]">{d.title}</h3>
-              <p className="mt-2 text-[13.5px] leading-[1.75] text-white/75">{d.body}</p>
+        <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-6 border-y border-white/15 py-7 lg:grid-cols-4">
+          {stats.map((s) => (
+            <div key={s.l}>
+              <dt className="font-display text-[30px] tabular-nums lg:text-[36px]">{s.n}</dt>
+              <dd className="mt-1 text-[12.5px] text-white/55">{s.l}</dd>
             </div>
           ))}
+        </dl>
+
+        <div className="mt-10 grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-14">
+          <div className="grid gap-x-8 gap-y-7 sm:grid-cols-2 lg:grid-cols-1">
+            {dataWork.map((d) => (
+              <div key={d.title}>
+                <h3 className="font-display text-[17px]">{d.title}</h3>
+                <p className="mt-2 text-[13.5px] leading-[1.75] text-white/75">{d.body}</p>
+              </div>
+            ))}
+          </div>
+          <DatasetShowcase />
         </div>
       </Reveal>
     </section>
