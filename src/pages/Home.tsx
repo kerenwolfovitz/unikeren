@@ -107,6 +107,55 @@ function HowIWork() {
   );
 }
 
+const dataWork = [
+  {
+    title: "Infrastructure into product",
+    body: "Collection pipelines and AI extraction are deep technical systems. My job is to shape them into features with a clear user, a clear job and a clear definition of done.",
+  },
+  {
+    title: "Discovery with technical users",
+    body: "The people using this are engineers, data scientists and analysts. Discovery means getting into their pipelines and their workarounds, not just running interviews.",
+  },
+  {
+    title: "AI where it earns its place",
+    body: "LLM-assisted extraction and structuring, scoped to the cases where it genuinely beats a deterministic approach — and measured against it rather than assumed better.",
+  },
+  {
+    title: "Reliability as a feature",
+    body: "At this scale, uptime, freshness and accuracy are the product. I set the KPIs for them and hold the roadmap to them when something shinier comes along.",
+  },
+];
+
+function DataProduct() {
+  return (
+    <section className="bg-ink text-white">
+      <Reveal className="mx-auto max-w-[1280px] px-5 py-14 lg:px-10 lg:py-16">
+        <div className="max-w-[760px]">
+          <p className="font-display text-[13px] tracking-[0.18em] text-accent uppercase">
+            Product at Bright Data
+          </p>
+          <h2 className="mt-3 text-[28px] lg:text-[34px]">Data is the product</h2>
+          <p className="mt-4 text-[15px] leading-[1.75] text-white/85">
+            Bright Data is a web-data platform — infrastructure that collects, structures and
+            delivers public web data at enormous scale. I work on the product layer above it,
+            turning raw collection and AI capability into something an enterprise data team can buy,
+            trust and run in production.
+          </p>
+        </div>
+
+        <div className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2">
+          {dataWork.map((d) => (
+            <div key={d.title} className="border-t border-white/20 pt-4">
+              <h3 className="font-display text-[17px]">{d.title}</h3>
+              <p className="mt-2 text-[13.5px] leading-[1.75] text-white/75">{d.body}</p>
+            </div>
+          ))}
+        </div>
+      </Reveal>
+    </section>
+  );
+}
+
 const cards = [
   {
     to: "/ux-ui-management",
@@ -159,6 +208,7 @@ export default function Home() {
     <>
       <Hero />
       <HowIWork />
+      <DataProduct />
       <WhereNext />
     </>
   );
