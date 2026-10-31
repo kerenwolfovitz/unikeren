@@ -10,6 +10,11 @@ export function Footer() {
           UNIKEREN · KEREN WOLFOVITZ
         </span>
       </Link>
+      <p className="mt-4 text-center text-[12px] text-ink/55">
+        <Link to="/privacy" className="underline underline-offset-4 hover:text-ink">
+          Privacy
+        </Link>
+      </p>
     </footer>
   );
 }
