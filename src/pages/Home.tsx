@@ -24,13 +24,16 @@ function Hero() {
           <div className="max-w-[720px]">
             <h1 className="text-[30px] text-white lg:text-[34px]">A bit about me...</h1>
             <p className="mt-6 text-[15px] leading-[1.85] text-white/90">
-              Product Manager with a deep design background. Previously Senior Manager UX/UI, with a
-              proven track record in ui and in mentoring, guiding, and managing cross-functional
-              teams of 10 talented designers in Israel, U.S and India. Adept at leading design
-              system management, overseeing deep discovery processes for large and complex products,
-              creating accessible solutions for intricate systems, and pioneering innovative
-              concepts. Known for expertly managing complex project timelines and conducting
-              rigorous usability testing and user research with internal and external partners.
+              Product Manager with 15+ years of experience, specializing in AI-driven,
+              data-intensive B2B platforms. Deep expertise in translating complex data and AI
+              capabilities into scalable product experiences — from discovery through delivery, with
+              a proven track record defining product strategy, prioritizing roadmaps, and driving
+              measurable outcomes at the intersection of AI, data infrastructure, and enterprise
+              user needs. A design background underpins all of it: years spent mentoring, guiding
+              and managing cross-functional teams of 10 talented designers across Israel, the U.S
+              and India, leading design system management and deep discovery on large and complex
+              products, and building accessible solutions for intricate systems. A strong partner to
+              Engineering, Data Science and Leadership teams.
             </p>
             <div className="mt-8 flex lg:justify-end">
               <Link
