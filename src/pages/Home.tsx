@@ -131,10 +131,13 @@ function DataProduct() {
     <section className="bg-ink text-white">
       <Reveal className="mx-auto max-w-[1280px] px-5 py-14 lg:px-10 lg:py-16">
         <div className="max-w-[760px]">
-          <p className="font-display text-[13px] tracking-[0.18em] text-accent uppercase">
-            Product at Bright Data
-          </p>
-          <h2 className="mt-3 text-[28px] lg:text-[34px]">Data is the product</h2>
+          <div className="flex items-center gap-3">
+            <img src="/img/brightdata.svg" alt="Bright Data" className="h-7 w-auto" />
+            <span className="font-display text-[12px] tracking-[0.18em] text-white/50 uppercase">
+              Where I work
+            </span>
+          </div>
+          <h2 className="mt-5 text-[28px] lg:text-[34px]">Data is the product</h2>
           <p className="mt-4 text-[15px] leading-[1.75] text-white/85">
             Bright Data is a web-data platform — infrastructure that collects, structures and
             delivers public web data at enormous scale. I work on the product layer above it,
