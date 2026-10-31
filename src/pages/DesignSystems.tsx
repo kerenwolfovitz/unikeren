@@ -42,7 +42,7 @@ const cards = [
   {
     icon: "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm-3.5 7.5a1 1 0 1 1 2 0 1 1 0 0 1-2 0Zm5 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0ZM8 14.2a4.6 4.6 0 0 0 8 0",
     title: "The Gate Keeper",
-    body: "As a Senior UX/UI Manager, I took on the role of gatekeeper to ensure our Design System evolves in the right direction. The commitment to adopting the Design System across all new projects and features is crucial, especially for designers and developers who are accustomed to different workflows without the structured guidance of UX principles.\n\nChanging established habits can be challenging, so I spearheaded the creation of a streamlined process for building new components, clearly distinguishing between components and patterns, and defining the governance for adding features to developed components.",
+    body: "As a Senior UX/UI Manager, I took on the role of gatekeeper to ensure our Design System evolved in the right direction. Getting the Design System adopted across all new projects and features was crucial, especially for designers and developers who were accustomed to different workflows without the structured guidance of UX principles.\n\nChanging established habits can be challenging, so I spearheaded the creation of a streamlined process for building new components, clearly distinguishing between components and patterns, and defining the governance for adding features to developed components.",
   },
   {
     icon: "m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z",
@@ -52,7 +52,7 @@ const cards = [
   {
     icon: "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 0v20M2 12h20M4.5 6h15M4.5 18h15",
     title: "Day to Day",
-    body: "Managing the design system alongside my role as Senior UX/UI Manager required meticulous coordination across multiple teams, including UX, product, and engineering. I implemented streamlined processes and communication channels to ensure smooth collaboration and effective maintenance of the system.\n\nDay-to-day responsibilities include overseeing the system's integration into ongoing projects, offering guidance on best practices, and ensuring the team has the support they need for successful implementation. I also focus on continuously refining the design system, identifying areas for improvement, and ensuring it remains scalable and adaptable to meet future demands",
+    body: "Managing the design system alongside my role as Senior UX/UI Manager required meticulous coordination across multiple teams, including UX, product, and engineering. I implemented streamlined processes and communication channels to ensure smooth collaboration and effective maintenance of the system.\n\nDay-to-day responsibilities included overseeing the system's integration into ongoing projects, offering guidance on best practices, and ensuring the team had the support they needed for successful implementation. I also focused on continuously refining the design system, identifying areas for improvement, and keeping it scalable and adaptable to meet future demands.",
   },
   {
     icon: "M13 2 4.5 12.5h6L11 22l8.5-10.5h-6L13 2Z",
@@ -74,10 +74,10 @@ export default function DesignSystems() {
             <div>
               <p className="text-[14px] leading-[1.9] text-white/90">
                 Managing design systems for complex projects requires a blend of strategic vision and
-                practical execution. My approach focuses on creating scalable, cohesive systems that
+                practical execution. My approach focused on creating scalable, cohesive systems that
                 unify user experience across platforms while streamlining collaboration for
-                cross-functional teams. By fostering innovation and maintaining consistency, I ensure
-                that each component serves both design and functionality, delivering high-quality
+                cross-functional teams. By fostering innovation and maintaining consistency, I made
+                sure each component served both design and functionality, delivering high-quality
                 digital experiences efficiently.
               </p>
               <div className="mt-7 flex flex-wrap gap-4">

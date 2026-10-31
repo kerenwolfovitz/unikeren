@@ -24,13 +24,13 @@ function Hero() {
           <div className="max-w-[720px]">
             <h1 className="text-[30px] text-white lg:text-[34px]">A bit about me...</h1>
             <p className="mt-6 text-[15px] leading-[1.85] text-white/90">
-              Senior Manager UX/UI with a proven track record in ui and in mentoring, guiding, and
-              managing cross-functional teams of 10 talented designers in Israel, U.S and India.
-              Adept at leading design system management, overseeing deep discovery processes for
-              large and complex products, creating accessible solutions for intricate systems, and
-              pioneering innovative concepts. Known for expertly managing complex project timelines
-              and conducting rigorous usability testing and user research with internal and external
-              partners.
+              Product Manager with a deep design background. Previously Senior Manager UX/UI, with a
+              proven track record in ui and in mentoring, guiding, and managing cross-functional
+              teams of 10 talented designers in Israel, U.S and India. Adept at leading design
+              system management, overseeing deep discovery processes for large and complex products,
+              creating accessible solutions for intricate systems, and pioneering innovative
+              concepts. Known for expertly managing complex project timelines and conducting
+              rigorous usability testing and user research with internal and external partners.
             </p>
             <div className="mt-8 flex lg:justify-end">
               <Link

@@ -4,23 +4,23 @@ import { contact } from "../site";
 const sections = [
   {
     title: "Leadership and Mentorship",
-    body: "As a Senior UX/UI Manager, one of my core responsibilities is to mentor and support my team of designers. I focus on nurturing each designer's unique strengths while encouraging growth in areas that align with their career goals. Regular feedback sessions, paired design critiques, and collaborative brainstorming are essential parts of my day-to-day. I also guide the team through complex problem-solving and decision-making processes, ensuring that we create meaningful, user-focused designs that are backed by data and research.",
+    body: "As a Senior UX/UI Manager, one of my core responsibilities was to mentor and support my team of designers. I focused on nurturing each designer's unique strengths while encouraging growth in areas that aligned with their career goals. Regular feedback sessions, paired design critiques, and collaborative brainstorming were essential parts of the day-to-day. I also guided the team through complex problem-solving and decision-making processes, ensuring that we created meaningful, user-focused designs that were backed by data and research.",
   },
   {
     title: "Cross-Functional Collaboration",
-    body: "A significant part of my role involves bridging the gap between design, development, and product strategy. I work closely with product managers, developers, and other stakeholders to translate user needs and business requirements into design solutions. This cross-functional collaboration ensures that the entire product experience is cohesive and aligned with both user expectations and technical capabilities. Regular syncs, design sprints, and workshops are key tools I use to facilitate seamless communication and keep projects moving forward.",
+    body: "A significant part of the role involved bridging the gap between design, development, and product strategy. I worked closely with product managers, developers, and other stakeholders to translate user needs and business requirements into design solutions — the same seam I now sit on from the product side. This cross-functional collaboration kept the entire product experience cohesive and aligned with both user expectations and technical capabilities. Regular syncs, design sprints, and workshops were the tools I used to facilitate seamless communication and keep projects moving forward.",
   },
   {
     title: "Design Strategy and Execution",
-    body: "Balancing long-term design vision with the practical execution of day-to-day tasks is crucial in my role. I'm responsible for setting the design strategy that aligns with business goals while also ensuring that the team delivers on tight deadlines. This involves defining design principles, creating roadmaps for future initiatives, and making sure that every design decision reflects the larger strategic direction. Whether it's overseeing the development of a new feature or managing the evolution of an existing product, I ensure that the end result meets both user and business needs.",
+    body: "Balancing long-term design vision with the practical execution of day-to-day tasks was crucial in the role. I was responsible for setting the design strategy that aligned with business goals while also ensuring that the team delivered on tight deadlines. That meant defining design principles, creating roadmaps for future initiatives, and making sure that every design decision reflected the larger strategic direction. Whether it was overseeing the development of a new feature or managing the evolution of an existing product, I made sure the end result met both user and business needs.",
   },
   {
     title: "Driving Innovation",
-    body: "Innovation is at the heart of successful UX/UI management. I constantly encourage my team to think outside the box and explore creative solutions to complex design problems. From adopting cutting-edge design tools and methods to incorporating user feedback into the development cycle, I ensure that we are always pushing the boundaries of what's possible. This commitment to innovation not only improves the user experience but also positions the product as a leader in the industry.",
+    body: "Innovation is at the heart of successful UX/UI management. I constantly encouraged my team to think outside the box and explore creative solutions to complex design problems. From adopting cutting-edge design tools and methods to incorporating user feedback into the development cycle, I made sure we were always pushing the boundaries of what's possible. That commitment to innovation not only improved the user experience but also positioned the product as a leader in the industry.",
   },
   {
     title: "Maintaining a User-Centered Focus",
-    body: "While managing a team and juggling multiple projects, keeping the user at the center of every decision is a key part of the role. I advocate for thorough user research and usability testing to inform design choices. Whether we're conducting interviews, running surveys, or performing A/B tests, my team and I make sure we're continuously learning from users and adjusting our designs accordingly",
+    body: "While managing a team and juggling multiple projects, keeping the user at the center of every decision was a key part of the role — and it is the habit that carried over most directly into product. I advocated for thorough user research and usability testing to inform design choices. Whether we were conducting interviews, running surveys, or performing A/B tests, my team and I made sure we were continuously learning from users and adjusting accordingly.",
   },
 ];
 
@@ -61,15 +61,17 @@ export default function Management() {
               className="h-full max-h-[460px] w-full object-cover"
             />
             <div className="bg-white/90 p-8 lg:p-10">
-              <h1 className="text-[24px] lg:text-[28px]">What It's Like to Be a UX/UI Manager</h1>
+              <h1 className="text-[24px] lg:text-[28px]">Leading a UX/UI Team</h1>
               <p className="mt-5 text-[14px] leading-[1.85]">
-                Being a Senior UX/UI Manager is about balancing creativity, leadership, and strategy.
-                My role is not only to guide a talented team of designers but also to ensure that we
-                consistently deliver user-centered, high-quality design solutions that align with
-                business objectives. Every day presents new challenges, from mentoring individual
-                team members to collaborating with stakeholders across the organization. By fostering
-                a culture of innovation and continuous improvement, I ensure that we stay ahead of
-                trends while meeting accessibility and usability standards.
+                Before moving into product management, I spent years as a Senior UX/UI Manager —
+                balancing creativity, leadership, and strategy. My role was not only to guide a
+                talented team of designers but also to ensure that we consistently delivered
+                user-centered, high-quality design solutions that aligned with business objectives.
+                Every day presented new challenges, from mentoring individual team members to
+                collaborating with stakeholders across the organization. By fostering a culture of
+                innovation and continuous improvement, I made sure we stayed ahead of trends while
+                meeting accessibility and usability standards. It is the grounding I bring to
+                product work today.
               </p>
             </div>
           </div>
