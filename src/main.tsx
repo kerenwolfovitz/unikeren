@@ -4,6 +4,7 @@ import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom"
 import App from "./App";
 import Home from "./pages/Home";
 import Management from "./pages/Management";
+import UxUiManagement from "./pages/UxUiManagement";
 import DesignSystems from "./pages/DesignSystems";
 import BlastFromThePast from "./pages/BlastFromThePast";
 import ManagementConsoleDetails from "./pages/ManagementConsoleDetails";
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { index: true, element: <Home /> },
+      { path: "ux-ui-management", element: <UxUiManagement /> },
       { path: "management", element: <Management /> },
       { path: "design-systems", element: <DesignSystems /> },
       { path: "blast-from-the-past", element: <BlastFromThePast /> },

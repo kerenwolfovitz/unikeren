@@ -12,8 +12,9 @@ export const contact = {
 };
 
 export const navLinks = [
-  { label: "Recent projects", to: "/" },
-  { label: "Management", to: "/management" },
+  { label: "Product", to: "/" },
+  { label: "UX/UI Management", to: "/ux-ui-management" },
+  { label: "Being a Manager", to: "/management" },
   { label: "Design Systems", to: "/design-systems" },
   { label: "A Blast from the Past", to: "/blast-from-the-past" },
 ];
