@@ -21,10 +21,19 @@ function Hero() {
             "linear-gradient(100deg, rgba(14,14,22,0.96) 0%, rgba(24,22,60,0.86) 38%, rgba(62,54,160,0.55) 62%, rgba(45,140,205,0.45) 100%)",
         }}
       />
+      {/* Deepens the lower half so the workflow text stays readable on the light right side */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(180deg, rgba(14,14,22,0) 40%, rgba(14,14,22,0.6) 100%)",
+        }}
+      />
       <div className="relative mx-auto max-w-[1280px] px-5 py-16 lg:px-10 lg:py-20">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-14">
           <div className="max-w-[640px]">
-            <h1 className="text-[30px] text-white lg:text-[36px]">A bit about me...</h1>
+            <h1 className="text-[30px] text-white lg:text-[36px]">
+              A bit about my product management life...
+            </h1>
             <p className="mt-6 text-[17px] leading-[1.7] text-white/95">
               Product Manager at <strong className="font-semibold">Bright Data</strong>, building
               AI-driven, data-intensive B2B platforms.
@@ -54,6 +63,21 @@ function Hero() {
             alt="Keren Wolfovitz"
             className="h-[150px] w-[150px] shrink-0 rounded-full object-cover lg:h-[200px] lg:w-[200px]"
           />
+        </div>
+
+        <div className="mt-14 border-t border-white/15 pt-10 lg:mt-16">
+          <h2 className="text-[22px] text-white lg:text-[26px]">How I work, end to end</h2>
+          <p className="mt-2 max-w-[620px] text-[14.5px] leading-[1.75] text-white/75">
+            From the first customer conversation to the signed deal — I stay with it the whole way.
+          </p>
+          <ol className="mt-10 flex flex-col items-stretch gap-x-2 gap-y-4 lg:flex-row lg:items-start">
+            {steps.map((s, i) => (
+              <Fragment key={s.title}>
+                {i > 0 && <FlowArrow dark />}
+                <WorkflowStep step={s} dark />
+              </Fragment>
+            ))}
+          </ol>
         </div>
       </div>
     </section>
@@ -279,28 +303,6 @@ const steps: Step[] = [
   },
 ];
 
-function HowIWork() {
-  return (
-    <section className="bg-band-workflows">
-      <Reveal className="mx-auto max-w-[1280px] px-5 py-14 lg:px-10 lg:py-16">
-        <h2 className="text-[28px] lg:text-[34px]">How I work, end to end</h2>
-        <p className="mt-3 max-w-[620px] text-[15px] leading-[1.75]">
-          From the first customer conversation to the signed deal — I stay with it the whole way.
-        </p>
-
-        <ol className="mt-12 flex flex-col items-stretch gap-x-2 gap-y-4 lg:flex-row lg:items-start">
-          {steps.map((s, i) => (
-            <Fragment key={s.title}>
-              {i > 0 && <FlowArrow />}
-              <WorkflowStep step={s} />
-            </Fragment>
-          ))}
-        </ol>
-      </Reveal>
-    </section>
-  );
-}
-
 const stats = [
   { n: "1,000+", l: "datasets" },
   { n: "21B+", l: "records" },
@@ -423,7 +425,6 @@ export default function Home() {
     <>
       <Hero />
       <NeverMiss />
-      <HowIWork />
       <DataProduct />
       <WhereNext />
     </>

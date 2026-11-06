@@ -49,10 +49,15 @@ export type Step = {
   body: string;
 };
 
-export function WorkflowStep({ step }: { step: Step }) {
+/** `dark` is for use on a dark background, such as the home page hero. */
+export function WorkflowStep({ step, dark = false }: { step: Step; dark?: boolean }) {
   return (
     <li className="flex min-w-0 flex-col items-center text-center lg:flex-1 lg:basis-[200px]">
-      <span className="flex h-12 w-12 items-center justify-center rounded-full bg-ink text-white">
+      <span
+        className={`flex h-12 w-12 items-center justify-center rounded-full ${
+          dark ? "border border-white/25 bg-white/10 text-white" : "bg-ink text-white"
+        }`}
+      >
         <svg
           viewBox="0 0 24 24"
           fill="none"
@@ -66,14 +71,16 @@ export function WorkflowStep({ step }: { step: Step }) {
           {icons[step.icon]}
         </svg>
       </span>
-      <h3 className="mt-4 font-display text-[16px]">{step.title}</h3>
-      <p className="mt-1.5 text-[13px] leading-[1.7] text-ink/75">{step.body}</p>
+      <h3 className={`mt-4 font-display text-[16px] ${dark ? "text-white" : ""}`}>{step.title}</h3>
+      <p className={`mt-1.5 text-[13px] leading-[1.7] ${dark ? "text-white/80" : "text-ink/75"}`}>
+        {step.body}
+      </p>
     </li>
   );
 }
 
 /** Points right on wide screens, down once the flow stacks. */
-export function FlowArrow() {
+export function FlowArrow({ dark = false }: { dark?: boolean }) {
   return (
     <li aria-hidden="true" className="flex shrink-0 items-center justify-center self-center py-2">
       <svg
@@ -83,7 +90,7 @@ export function FlowArrow() {
         strokeWidth="1.4"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="h-5 w-5 rotate-90 text-ink/35 lg:mt-[-52px] lg:rotate-0"
+        className={`h-5 w-5 rotate-90 lg:mt-[-52px] lg:rotate-0 ${dark ? "text-white/35" : "text-ink/35"}`}
       >
         <path d="M4 12h15M13 6l6 6-6 6" />
       </svg>
