@@ -283,12 +283,29 @@ const shoverShookPoints = [
   },
 ];
 
-const shoverShookFlow = [
-  { who: "Seller", text: "Lists an unused voucher and sets a price" },
-  { who: "Buyer", text: "Finds it by category, at a discount" },
-  { who: "Platform", text: "Takes payment securely" },
-  { who: "Buyer", text: "Gets the code instantly and uses it" },
+const shoverShookRoles = [
+  { who: "Seller", story: "List a credit in a minute — store, value, price, proof — and know the moment it sells." },
+  { who: "Buyer", story: "Search by store, value and price, pay securely, get the code straight away." },
+  { who: "Admin", story: "Watch every transaction, flag fraud, suspend bad actors, tune the commission." },
 ];
+
+const shoverShookMvp = [
+  "Sign-in & 2FA",
+  "Listing with proof upload",
+  "Search & filters",
+  "Secure payments",
+  "Buyer & seller dashboards",
+  "Admin & fraud monitoring",
+  "Notifications",
+];
+
+const shoverShookGtm = [
+  { phase: "Validate", text: "Start as a closed community with clear rules, to prove people actually trade." },
+  { phase: "Build trust", text: "Seed the first deals, run weekly “voucher market” posts, verify listings." },
+  { phase: "Platform", text: "Move trades onto the site, where every sale carries the commission." },
+];
+
+const shoverShookKpis = ["CAC", "LTV", "Transaction volume", "Conversion", "Churn"];
 
 function ShoverShook() {
   return (
@@ -308,11 +325,12 @@ function ShoverShook() {
             </h2>
             <p className="mt-5 max-w-[580px] text-[16px] leading-[1.75] text-ink/80">
               A two-sided marketplace for the Israeli market: people sell gift vouchers they don't
-              need, others buy them below face value. I designed and built it from the idea up —
-              both sides of the marketplace, the buying flow and the site.
+              need, others buy them below face value. I took it from a one-page story to a business
+              plan, a full PRD and a working product — both sides of the marketplace, the buying flow
+              and the site.
             </p>
             <ul className="mt-5 flex flex-wrap gap-2" aria-label="What it involved">
-              {["Two-sided marketplace", "Hebrew / RTL", "Trust & payments", "Built with AI tools"].map(
+              {["Business plan & PRD", "Two-sided marketplace", "Trust & payments", "Hebrew / RTL"].map(
                 (t) => (
                   <li
                     key={t}
@@ -332,19 +350,115 @@ function ShoverShook() {
                 </div>
               ))}
             </div>
+
+            <a
+              href="https://shovershook.lovable.app"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-9 inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3 text-[13px] text-white transition-colors hover:bg-[#7c3aed]"
+            >
+              Visit Shover Shook
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-4 w-4"
+                aria-hidden="true"
+              >
+                <path d="M7 17 17 7M9 7h8v8" />
+              </svg>
+            </a>
           </div>
         </div>
 
-        <ol className="mt-14 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {shoverShookFlow.map((s, i) => (
-            <li key={i} className="rounded-2xl border border-ink/10 bg-white/70 p-4">
-              <span className="font-display text-[12px] tracking-[0.14em] text-ink/40 tabular-nums">
-                STEP {i + 1} · {s.who.toUpperCase()}
-              </span>
-              <p className="mt-2 text-[14px] leading-[1.6] text-ink/85">{s.text}</p>
-            </li>
-          ))}
-        </ol>
+        <div className="mt-16 rounded-3xl border border-ink/10 bg-white p-7 lg:p-10">
+          <span className="inline-flex items-center gap-2 rounded-full bg-[#7c3aed]/10 px-3 py-1 font-display text-[12px] tracking-[0.12em] text-[#7c3aed] uppercase">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#7c3aed]" />
+            From business plan to product
+          </span>
+          <h3 className="mt-5 max-w-[720px] font-display text-[24px] leading-[1.25] lg:text-[28px]">
+            Behind it: a business plan and a full PRD I wrote myself
+          </h3>
+
+          <div className="mt-9 grid gap-x-10 gap-y-10 lg:grid-cols-2">
+            <div>
+              <h4 className="font-display text-[13px] tracking-[0.14em] text-ink/45 uppercase">
+                Business model
+              </h4>
+              <p className="mt-3 flex items-baseline gap-3">
+                <span className="font-display text-[44px] leading-none tabular-nums">0.5%</span>
+                <span className="text-[13.5px] leading-[1.6] text-ink/70">
+                  commission on every trade — kept deliberately low, a clear edge over existing
+                  exchanges
+                </span>
+              </p>
+              <p className="mt-3 text-[13px] leading-[1.7] text-ink/60">
+                Next: premium membership, retailer partnerships, promoted listings.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-display text-[13px] tracking-[0.14em] text-ink/45 uppercase">
+                Three users, three jobs
+              </h4>
+              <dl className="mt-3 grid gap-3">
+                {shoverShookRoles.map((r) => (
+                  <div key={r.who} className="grid grid-cols-[64px_1fr] gap-3">
+                    <dt className="pt-0.5 font-display text-[14px] text-[#7c3aed]">{r.who}</dt>
+                    <dd className="text-[13px] leading-[1.6] text-ink/75">{r.story}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+
+            <div>
+              <h4 className="font-display text-[13px] tracking-[0.14em] text-ink/45 uppercase">
+                MVP scope
+              </h4>
+              <ul className="mt-3 flex flex-wrap gap-2">
+                {shoverShookMvp.map((m) => (
+                  <li
+                    key={m}
+                    className="rounded-full bg-band-daas/70 px-3 py-1 text-[12.5px] text-ink/80"
+                  >
+                    {m}
+                  </li>
+                ))}
+              </ul>
+              <h4 className="block pt-8 font-display text-[13px] tracking-[0.14em] text-ink/45 uppercase">
+                Success metrics
+              </h4>
+              <ul className="mt-3 flex flex-wrap gap-2">
+                {shoverShookKpis.map((k) => (
+                  <li key={k} className="rounded-full border border-ink/15 px-3 py-1 text-[12.5px] text-ink/75">
+                    {k}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-display text-[13px] tracking-[0.14em] text-ink/45 uppercase">
+                Go-to-market: community first
+              </h4>
+              <ol className="mt-3 grid gap-3">
+                {shoverShookGtm.map((g, i) => (
+                  <li key={g.phase} className="grid grid-cols-[28px_1fr] gap-3">
+                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-ink font-display text-[12px] text-white tabular-nums">
+                      {i + 1}
+                    </span>
+                    <p className="text-[13px] leading-[1.6] text-ink/75">
+                      <span className="font-display text-[14px] text-ink">{g.phase}.</span> {g.text}
+                    </p>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+        </div>
       </Reveal>
     </section>
   );
