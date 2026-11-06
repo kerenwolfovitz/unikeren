@@ -4,6 +4,7 @@ import { Reveal } from "../components/Reveal";
 import { FlowArrow, WorkflowStep, type Step } from "../components/WorkflowStep";
 import { DatasetShowcase } from "../components/DatasetShowcase";
 import { NeverMissShowcase } from "../components/NeverMissShowcase";
+import { ShoverShookShowcase } from "../components/ShoverShookShowcase";
 
 function Hero() {
   return (
@@ -48,7 +49,7 @@ function Hero() {
                 href="#nevermiss"
                 className="inline-flex items-center rounded-full bg-white px-7 py-2.5 text-[13px] text-ink transition-colors hover:bg-accent"
               >
-                See what I built: NeverMiss
+                See the businesses I built
               </a>
               <Link
                 to="/ux-ui-management"
@@ -267,6 +268,88 @@ function NeverMiss() {
   );
 }
 
+const shoverShookPoints = [
+  {
+    title: "The problem",
+    body: "Gift vouchers pile up unused — the wrong shop, the wrong city, a birthday gift nobody wanted — and quietly expire. Meanwhile someone else would happily use that exact voucher if it were cheaper.",
+  },
+  {
+    title: "What it does",
+    body: "A marketplace that connects the two. Sellers list a voucher in a minute and get cash back for it; buyers browse by category, pay below face value and get the code instantly.",
+  },
+  {
+    title: "What I focused on",
+    body: "Trust. A stranger is handing over a code, so safe payment, clear pricing and instant delivery are the product — not an afterthought.",
+  },
+];
+
+const shoverShookFlow = [
+  { who: "Seller", text: "Lists an unused voucher and sets a price" },
+  { who: "Buyer", text: "Finds it by category, at a discount" },
+  { who: "Platform", text: "Takes payment securely" },
+  { who: "Buyer", text: "Gets the code instantly and uses it" },
+];
+
+function ShoverShook() {
+  return (
+    <section id="shover-shook" className="scroll-mt-24 bg-band-daas/60">
+      <Reveal className="mx-auto max-w-[1280px] px-5 py-14 lg:px-10 lg:py-20">
+        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-16">
+          <div className="order-2 lg:order-1">
+            <ShoverShookShowcase />
+          </div>
+
+          <div className="order-1 lg:order-2">
+            <span className="font-display text-[12px] tracking-[0.18em] text-ink/50 uppercase">
+              Another business I built
+            </span>
+            <h2 className="mt-4 text-[30px] leading-[1.2] lg:text-[40px]">
+              Shover Shook — a marketplace for vouchers you'll never use
+            </h2>
+            <p className="mt-5 max-w-[580px] text-[16px] leading-[1.75] text-ink/80">
+              A two-sided marketplace for the Israeli market: people sell gift vouchers they don't
+              need, others buy them below face value. I designed and built it from the idea up —
+              both sides of the marketplace, the buying flow and the site.
+            </p>
+            <ul className="mt-5 flex flex-wrap gap-2" aria-label="What it involved">
+              {["Two-sided marketplace", "Hebrew / RTL", "Trust & payments", "Built with AI tools"].map(
+                (t) => (
+                  <li
+                    key={t}
+                    className="rounded-full border border-ink/15 bg-white/60 px-3 py-1 text-[12px] text-ink/75"
+                  >
+                    {t}
+                  </li>
+                ),
+              )}
+            </ul>
+
+            <div className="mt-9 grid gap-x-8 gap-y-6 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+              {shoverShookPoints.map((p) => (
+                <div key={p.title}>
+                  <h3 className="font-display text-[17px]">{p.title}</h3>
+                  <p className="mt-2 text-[13.5px] leading-[1.75] text-ink/75">{p.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <ol className="mt-14 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {shoverShookFlow.map((s, i) => (
+            <li key={i} className="rounded-2xl border border-ink/10 bg-white/70 p-4">
+              <span className="font-display text-[12px] tracking-[0.14em] text-ink/40 tabular-nums">
+                STEP {i + 1} · {s.who.toUpperCase()}
+              </span>
+              <p className="mt-2 text-[14px] leading-[1.6] text-ink/85">{s.text}</p>
+            </li>
+          ))}
+        </ol>
+      </Reveal>
+    </section>
+  );
+}
+
 const steps: Step[] = [
   {
     icon: "customers",
@@ -422,6 +505,7 @@ export default function Home() {
     <>
       <Hero />
       <NeverMiss />
+      <ShoverShook />
       <DataProduct />
       <WhereNext />
     </>
