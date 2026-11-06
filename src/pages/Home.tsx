@@ -314,6 +314,28 @@ function ShoverShook() {
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-16">
           <div className="order-2 lg:order-1">
             <ShoverShookShowcase />
+            <div className="mx-auto mt-0 w-full max-w-[420px]">
+              <a
+                href="https://shovershook.lovable.app"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3 text-[13px] text-white transition-colors hover:bg-[#7c3aed]"
+              >
+                Visit Shover Shook
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-4 w-4"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17 17 7M9 7h8v8" />
+                </svg>
+              </a>
+            </div>
           </div>
 
           <div className="order-1 lg:order-2">
@@ -351,26 +373,6 @@ function ShoverShook() {
               ))}
             </div>
 
-            <a
-              href="https://shovershook.lovable.app"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-9 inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3 text-[13px] text-white transition-colors hover:bg-[#7c3aed]"
-            >
-              Visit Shover Shook
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-4 w-4"
-                aria-hidden="true"
-              >
-                <path d="M7 17 17 7M9 7h8v8" />
-              </svg>
-            </a>
           </div>
         </div>
 
