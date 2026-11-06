@@ -61,12 +61,43 @@ function Hero() {
 }
 
 const neverMissPipeline = [
-  { title: "Sign-up form", body: "A business fills in one onboarding form on the site." },
-  { title: "Logged to a sheet", body: "Every answer lands in a Google Sheet that runs the operation." },
-  { title: "Agent created", body: "A voice assistant is generated for that business automatically." },
-  { title: "7-day trial", body: "It answers their real calls; leads arrive by email and in the sheet." },
-  { title: "Pay by SMS", body: "On day 7 a payment link goes out. No payment, the agent switches off." },
-  { title: "Feedback loop", body: "A feedback form follows, and I fix what real calls reveal." },
+  {
+    title: "Sign-up triggers n8n",
+    body: "A business fills in the onboarding form and an n8n workflow picks it up instantly.",
+    tools: ["Form", "n8n"],
+  },
+  {
+    title: "Written to the sheet",
+    body: "n8n saves every answer to the spreadsheet that runs the whole operation.",
+    tools: ["n8n", "Sheets"],
+  },
+  {
+    title: "Voice agent built by API",
+    body: "n8n creates a dedicated voice assistant for that business and writes its ID back to the sheet.",
+    tools: ["n8n", "Voice AI"],
+  },
+  {
+    title: "Calls become leads",
+    body: "After every call, n8n logs the lead as a new row and emails the team a summary.",
+    tools: ["Voice AI", "n8n", "Sheets"],
+  },
+  {
+    title: "Paid by SMS",
+    body: "On day 7, n8n sends a payment link. No payment, and the trial agent is switched off.",
+    tools: ["n8n", "SMS"],
+  },
+  {
+    title: "Feedback loop",
+    body: "n8n sends a feedback form, and I tune the agent on what real calls reveal.",
+    tools: ["n8n", "Email"],
+  },
+];
+
+const stack = [
+  { name: "n8n", role: "The automation engine — every workflow runs through it" },
+  { name: "Voice AI agent", role: "Answers the phone, qualifies, books" },
+  { name: "Spreadsheet", role: "The live database: clients, agents, leads" },
+  { name: "Email & SMS", role: "Lead summaries, payment links, feedback" },
 ];
 
 const neverMissPoints = [
@@ -98,9 +129,22 @@ function NeverMiss() {
             </h2>
             <p className="mt-5 max-w-[580px] text-[16px] leading-[1.75] text-ink/80">
               A voice agent for service businesses that live on the phone. I took it from idea to
-              paying-customer flow on my own: the positioning, the voice agent itself, the
-              onboarding automation and the website that sells it.
+              paying-customer flow on my own — and wired the whole business together with{" "}
+              <strong className="font-semibold text-ink">n8n</strong>: the voice agent, the
+              spreadsheet that runs operations, lead emails, payments and feedback, all automated.
             </p>
+            <ul className="mt-5 flex flex-wrap gap-2" aria-label="Built with">
+              {["n8n automation", "Voice AI agent", "Spreadsheet as database", "API integrations"].map(
+                (t) => (
+                  <li
+                    key={t}
+                    className="rounded-full border border-ink/15 px-3 py-1 text-[12px] text-ink/75"
+                  >
+                    {t}
+                  </li>
+                ),
+              )}
+            </ul>
 
             <div className="mt-9 grid gap-x-8 gap-y-6 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
               {neverMissPoints.map((p) => (
@@ -138,23 +182,64 @@ function NeverMiss() {
           </div>
         </div>
 
-        <div className="mt-16 border-t border-ink/10 pt-10">
-          <h3 className="font-display text-[20px]">Self-serve from sign-up to payment</h3>
-          <p className="mt-2 max-w-[620px] text-[14px] leading-[1.75] text-ink/70">
-            I automated onboarding so a new business can go from the website to a working
-            receptionist without a sales call.
-          </p>
-          <ol className="mt-8 grid gap-x-6 gap-y-7 sm:grid-cols-2 lg:grid-cols-6">
-            {neverMissPipeline.map((s, i) => (
-              <li key={s.title} className="relative">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full border border-ink/20 font-display text-[14px] tabular-nums">
-                  {i + 1}
-                </span>
-                <h4 className="mt-3 font-display text-[15px]">{s.title}</h4>
-                <p className="mt-1.5 text-[12.5px] leading-[1.7] text-ink/70">{s.body}</p>
-              </li>
-            ))}
-          </ol>
+        <div className="mt-16 overflow-hidden rounded-3xl bg-ink text-white">
+          <div className="grid gap-10 p-7 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,2fr)] lg:gap-14 lg:p-10">
+            <div>
+              <span className="inline-flex items-center gap-2 rounded-full bg-accent/15 px-3 py-1 font-display text-[12px] tracking-[0.12em] text-accent uppercase">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                Automated with n8n
+              </span>
+              <h3 className="mt-5 font-display text-[24px] leading-[1.25] lg:text-[28px]">
+                No manual work from sign-up to payment
+              </h3>
+              <p className="mt-3 text-[14px] leading-[1.75] text-white/70">
+                I designed and built the n8n workflows that connect everything. A new business
+                goes from the website to a working receptionist — and every call becomes a row in
+                the spreadsheet and an email to the team — without anyone touching it.
+              </p>
+              <dl className="mt-7 grid gap-4">
+                {stack.map((s) => (
+                  <div key={s.name} className="border-l-2 border-accent/50 pl-3">
+                    <dt className="font-display text-[15px]">{s.name}</dt>
+                    <dd className="mt-0.5 text-[12.5px] leading-[1.6] text-white/55">{s.role}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+
+            <ol className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {neverMissPipeline.map((s, i) => (
+                <li
+                  key={s.title}
+                  className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.04] p-4"
+                >
+                  <span className="font-display text-[12px] tracking-[0.14em] text-white/40 tabular-nums">
+                    STEP {i + 1}
+                  </span>
+                  <h4 className="mt-2 font-display text-[16px]">{s.title}</h4>
+                  <p className="mt-1.5 flex-1 text-[12.5px] leading-[1.7] text-white/65">{s.body}</p>
+                  <ul className="mt-4 flex flex-wrap items-center gap-1.5" aria-label="Tools">
+                    {s.tools.map((t, j) => (
+                      <li key={t} className="flex items-center gap-1.5">
+                        {j > 0 && (
+                          <span aria-hidden="true" className="text-[11px] text-white/30">
+                            →
+                          </span>
+                        )}
+                        <span
+                          className={`rounded-full px-2.5 py-0.5 text-[11px] ${
+                            t === "n8n" ? "bg-accent text-ink" : "bg-white/10 text-white/75"
+                          }`}
+                        >
+                          {t}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
       </Reveal>
     </section>
