@@ -7,7 +7,7 @@ import { NeverMissShowcase } from "../components/NeverMissShowcase";
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-ink">
+    <section className="relative bg-ink">
       <img
         src="/img/hero-bg.png"
         alt=""
@@ -67,14 +67,11 @@ function Hero() {
 
         <div className="mt-14 border-t border-white/15 pt-10 lg:mt-16">
           <h2 className="text-[22px] text-white lg:text-[26px]">How I work, end to end</h2>
-          <p className="mt-2 max-w-[620px] text-[14.5px] leading-[1.75] text-white/75">
-            From the first customer conversation to the signed deal — I stay with it the whole way.
-          </p>
-          <ol className="mt-10 flex flex-col items-stretch gap-x-2 gap-y-4 lg:flex-row lg:items-start">
+          <ol className="mt-8 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:flex lg:flex-row lg:items-start lg:gap-x-2">
             {steps.map((s, i) => (
               <Fragment key={s.title}>
-                {i > 0 && <FlowArrow dark />}
-                <WorkflowStep step={s} dark />
+                {i > 0 && <FlowArrow dark compact />}
+                <WorkflowStep step={s} dark hoverDetails />
               </Fragment>
             ))}
           </ol>

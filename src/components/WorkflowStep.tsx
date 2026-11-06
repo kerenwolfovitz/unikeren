@@ -49,8 +49,57 @@ export type Step = {
   body: string;
 };
 
-/** `dark` is for use on a dark background, such as the home page hero. */
-export function WorkflowStep({ step, dark = false }: { step: Step; dark?: boolean }) {
+/**
+ * `dark` is for use on a dark background, such as the home page hero.
+ * `hoverDetails` hides the description until the step is hovered, focused or tapped.
+ */
+export function WorkflowStep({
+  step,
+  dark = false,
+  hoverDetails = false,
+}: {
+  step: Step;
+  dark?: boolean;
+  hoverDetails?: boolean;
+}) {
+  if (hoverDetails) {
+    return (
+      <li
+        tabIndex={0}
+        className="group relative flex min-w-0 cursor-default flex-col items-center text-center outline-none lg:flex-1 lg:basis-[160px]"
+      >
+        <span
+          className={`flex h-12 w-12 items-center justify-center rounded-full transition-colors ${
+            dark
+              ? "border border-white/25 bg-white/10 text-white group-hover:border-accent group-hover:text-accent group-focus:border-accent group-focus:text-accent"
+              : "bg-ink text-white"
+          }`}
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="h-6 w-6"
+            aria-hidden="true"
+          >
+            {icons[step.icon]}
+          </svg>
+        </span>
+        <h3 className={`mt-3 font-display text-[16px] ${dark ? "text-white" : ""}`}>{step.title}</h3>
+        <p
+          className={`pointer-events-none absolute top-full left-1/2 z-20 mt-2 w-[200px] sm:w-[230px] -translate-x-1/2 translate-y-1 rounded-xl px-4 py-3 text-[13px] leading-[1.6] opacity-0 shadow-[0_16px_40px_-12px_rgba(0,0,0,0.6)] transition duration-200 group-hover:translate-y-0 group-hover:opacity-100 group-focus:translate-y-0 group-focus:opacity-100 ${
+            dark ? "border border-white/10 bg-ink text-white/85" : "bg-ink text-white/90"
+          }`}
+        >
+          {step.body}
+        </p>
+      </li>
+    );
+  }
+
   return (
     <li className="flex min-w-0 flex-col items-center text-center lg:flex-1 lg:basis-[200px]">
       <span
@@ -80,7 +129,25 @@ export function WorkflowStep({ step, dark = false }: { step: Step; dark?: boolea
 }
 
 /** Points right on wide screens, down once the flow stacks. */
-export function FlowArrow({ dark = false }: { dark?: boolean }) {
+export function FlowArrow({ dark = false, compact = false }: { dark?: boolean; compact?: boolean }) {
+  if (compact) {
+    // Lines up with the icons; hidden once the steps wrap into a grid.
+    return (
+      <li aria-hidden="true" className="hidden shrink-0 self-start pt-3.5 lg:flex">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className={`h-5 w-5 ${dark ? "text-white/35" : "text-ink/35"}`}
+        >
+          <path d="M4 12h15M13 6l6 6-6 6" />
+        </svg>
+      </li>
+    );
+  }
   return (
     <li aria-hidden="true" className="flex shrink-0 items-center justify-center self-center py-2">
       <svg
